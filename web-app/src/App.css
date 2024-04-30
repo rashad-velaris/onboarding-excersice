@@ -1,0 +1,158 @@
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+.task-actions-ctn {
+  display: flex;
+  margin-top: 10px;
+}
+
+button.clear-new-task {
+  background: grey;
+}
+button.add-new-task {
+  background: blue;
+  margin-right: 5px;
+}
+
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.task-card {
+  display: flex;
+  background: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.add-task-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dlt-btn-ctn {
+  display: flex;
+  height: fit-content;
+}
+.edit-btn-ctn {
+  display: flex;
+  height: fit-content;
+  margin-right: 5px;
+  /* background: green; */
+}
+
+.task-title {
+  color: black;
+  margin-right: 30px;
+}
+.task-des-input {
+  width: 100%;
+  background: #fff;
+  margin-top: 10px;
+  height: 200px;
+  color: #222;
+  /* height: 100px; */
+}
+.task-title-input {
+  width: 100%;
+  background: #fff;
+  color: #222;
+  /* height: 100px; */
+}
+.edit-task-ctn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.delete-task-btn {
+  display: flex;
+  /* padding: 0; */
+}
+.task-edit-btn {
+  background: green;
+}
+
+h1.not-found {
+  color: #222;
+}
+
+.task-delete-btn {
+  background: red;
+}
+
+.edit-task-btn {
+  display: flex;
+  /* padding: 0; */
+}
+.add-task-btn {
+  background: blue;
+}
+
+.header-container {
+  background: #333;
+  padding: 10px;
+  /* height: 80px; */
+  /* position: fixed; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  margin: auto auto;
+}
+
+h2.header {
+  padding: 0px;
+  font-size: 30px;
+  line-height: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
