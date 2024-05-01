@@ -1,3 +1,4 @@
+import { InvalidRequestException } from '@aws-sdk/client-secrets-manager';
 import {
   addNewTask as addTask,
   editTask,
@@ -28,6 +29,10 @@ export const fetchTaskById = async (id) => {
 
 export const deleteTask = async (id) => {
   const idInt = parseInt(id, 10);
+  const task = getTaskById(idInt);
+  if (!task) {
+    throw new InvalidRequestException(`no task with id ${id}`);
+  }
   return removeTask(idInt);
 };
 
