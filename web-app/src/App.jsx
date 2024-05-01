@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<h1 className="not-found">404 Not Found</h1>}> */}
+        <Route path="/" element={<TaskList />}/>
         <Route path="tasks/home" element={<TaskList />} />
         <Route path="tasks/add" element={<AddTask />} />
         <Route path="tasks/edit" element={<EditTask />} />

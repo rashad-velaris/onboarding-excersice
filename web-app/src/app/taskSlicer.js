@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_API } from "../constants/apiConstants";
 
 const initialState = {
   value: [],
@@ -10,7 +11,7 @@ export const addTask = createAsyncThunk("tasks/addTask", async (task) => {
   try {
     await axios({
       method: "POST",
-      url: `http://localhost:5000/api/tasks`,
+      url: `${BASE_API}/tasks`,
       headers: {
         ContentType: "application/json",
       },
@@ -18,12 +19,12 @@ export const addTask = createAsyncThunk("tasks/addTask", async (task) => {
     });
     const response = await axios({
       method: "GET",
-      url: "http://localhost:5000/api/tasks",
+      url: `${BASE_API}/tasks`,
       headers: {
         ContentType: "application/json",
       },
     });
-    return response.data;
+    return response.data.data;
   } catch (error) {
     return error;
   }
@@ -33,19 +34,19 @@ export const deleteTask = createAsyncThunk("tasks/deleteTasks", async (id) => {
   try {
     await axios({
       method: "DELETE",
-      url: `http://localhost:5000/api/tasks/${id}`,
+      url: `${BASE_API}/tasks/${id}`,
       headers: {
         ContentType: "application/json",
       },
     });
     const response = await axios({
       method: "GET",
-      url: "http://localhost:5000/api/tasks",
+      url: `${BASE_API}/tasks`,
       headers: {
         ContentType: "application/json",
       },
     });
-    return response.data;
+    return response.data.data;
   } catch (error) {
     return error;
   }
@@ -55,12 +56,12 @@ export const getTasks = createAsyncThunk("tasks/getTasks", async () => {
   try {
     const response = await axios({
       method: "GET",
-      url: "http://localhost:5000/api/tasks",
+      url: `${BASE_API}/tasks`,
       headers: {
         ContentType: "application/json",
       },
     });
-    return response.data;
+    return response.data.data;
   } catch (error) {
     return error;
   }
