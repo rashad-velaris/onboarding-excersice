@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: TaskApi
+        LoadBalancerInfo:
+          ContainerName: internal-task-api-EcsTaskContainer # copy from task definition under containerDefinitions.name
+          ContainerPort: 3000 # an application container port

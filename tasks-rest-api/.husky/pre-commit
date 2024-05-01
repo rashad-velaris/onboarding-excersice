@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '▶️ Running code quality standards and styling check before committing...'
+
+npx lint-staged ||
+(
+  echo '⚠️ ESLint Check Failed! Make the required changes listed above, add changes and try to commit again'
+  false;
+)
+
+echo '✔️ Code looks good'

@@ -1,0 +1,9 @@
+.git
+.env*
+.editorconfig
+.gitignore
+test.sh
+ecs-task.js
+logs/
+LICENSE.md
+README.md

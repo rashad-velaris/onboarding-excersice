@@ -1,0 +1,127 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:362392363900:task-definition/qa-internal-sample-ms-ecs-cluster-task-Family:1",
+  "containerDefinitions": [
+    {
+      "name": "internal-sample-ms-EcsTaskContainer",
+      "image": "<IMAGE1_NAME>",
+      "cpu": 128,
+      "memory": 512,
+      "memoryReservation": 422,
+      "links": [],
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "entryPoint": [],
+      "command": [],
+      "environment": [
+        {
+          "name": "CLUSTER_NAME",
+          "value": "internal"
+        },
+        {
+          "name": "ENV",
+          "value": "qa"
+        },
+        {
+          "name": "AWS_XRAY_DAEMON_ADDRESS",
+          "value": "qa-internal-sample-ms-xray-demon:2000"
+        },
+        {
+          "name": "ACCOUNT_ID",
+          "value": "362392363900"
+        },
+        {
+          "name": "MS_NAME",
+          "value": "sample-ms"
+        }
+      ],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [],
+      "dnsServers": [],
+      "dnsSearchDomains": [],
+      "extraHosts": [],
+      "dockerSecurityOptions": [],
+      "dockerLabels": {},
+      "ulimits": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "qa-internal-sample-ms-ecs-cluster-task-LogsGroup",
+          "awslogs-region": "eu-west-2",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "qa-internal-sample-ms-ecs-cluster-task-Family",
+  "taskRoleArn": "arn:aws:iam::362392363900:role/CSM-qa-MS-Common-Task-Role",
+  "executionRoleArn": "arn:aws:iam::362392363900:role/CSM-qa-MS-Common-Task-Role",
+  "revision": 2,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EXTERNAL", "EC2"],
+  "requiresCompatibilities": ["EC2"],
+  "registeredAt": "2022-02-23T23:35:27.569Z",
+  "registeredBy": "arn:aws:sts::362392363900:assumed-role/OrganizationAccountAccessRole/PasanK",
+  "tags": [
+    {
+      "key": "OrgUnit",
+      "value": "SDLC"
+    },
+    {
+      "key": "Environment",
+      "value": "qa"
+    },
+    {
+      "key": "AWSAccountID",
+      "value": "362392363900"
+    },
+    {
+      "key": "CostCenter",
+      "value": "Silver"
+    },
+    {
+      "key": "ResourceGroup",
+      "value": "euw1-qa"
+    }
+  ]
+}

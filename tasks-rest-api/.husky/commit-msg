@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '▶️ Linting commit message with conventional commit spec....'
+
+npx --no -- commitlint --edit $1 ||
+(
+  echo '⚠️ Commit messages does not meet the conventional commit format (https://www.conventionalcommits.org/en/v1.0.0/),'
+  echo 'Make the required changes listed above, add changes and try to commit again'
+  false;
+)
+
+echo '✔️ Commit message looks good'
